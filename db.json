@@ -1,16 +1,13 @@
 {
   "card": [
     {
+      "cardlogo": "Card Issuer",
+      "cardnumber": "1234567891235648",
+      "cardname": "John First",
+      "expirationmonth": "04",
+      "expirationyear": "25",
+      "cvv": "123",
       "id": 1
-    },
-    {
-      "id": 2
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 4
     }
   ]
 }

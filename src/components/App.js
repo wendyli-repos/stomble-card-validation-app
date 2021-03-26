@@ -98,20 +98,24 @@ class App extends Component {
     return errors;
   };
 
-  // have a bit promblem with this json-server setup
+  // Update 01: can post to db.json
   postStateToJson() {
+    const card = {
+      cardlogo: this.state.card.cardlogo,
+      cardnumber: this.state.card.cardnumber,
+      cardname: this.state.card.cardname,
+      expirationmonth: this.state.card.expirationmonth,
+      expirationyear: this.state.card.expirationyear,
+      cvv: this.state.card.cvv,
+    };
+
     try {
       let result = fetch(" http://localhost:3001/card", {
-        method: "post",
-        mode: "no-cors",
+        method: "POST",
+        body: JSON.stringify(card),
         headers: {
-          Accept: "application/json",
-          "Content-type": "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          id: this.state.card.cardnumber,
-          cardinfo: this.state.card,
-        }),
       });
       console.log(result);
     } catch (e) {
