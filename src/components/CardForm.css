@@ -1,0 +1,40 @@
+.card-form-container {
+  position: relative;
+  margin: 0 auto;
+  min-width: 85.6mm;
+  padding: 150px 10px 10px 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.ui .button {
+  display: block;
+  width: 100%;
+  color: #fff;
+  background-color: #8965b3;
+  /* submit 后也颜色 #8965b3 */
+  margin-top: 10px;
+  padding: 14px 28px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.ui .button:hover {
+  background-color: #6b3fa0;
+  color: #fff;
+}
+
+@media (min-width: 480px) {
+  .card-form-container {
+    padding: 180px 30px 30px 30px;
+    max-width: 600px;
+  }
+  .ui .form .fields {
+    display: flex;
+    justify-content: space-between;
+  }
+}
