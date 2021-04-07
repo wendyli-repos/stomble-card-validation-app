@@ -1,9 +1,11 @@
+import { useState } from "react";
 import cardchip from "./icons8-chip-card-40.png";
 import "./Card.css";
 
 const Card = (props) => {
   // destructure: replace (props) with ({props.cardInfo}), then rest be {cardlogo} etc directly
   const isFlipped = props.isFlipped ? "isFlipped" : "";
+  const isBordered = props.isBordered ? "isBordered" : "";
 
   return (
     <div className='card-container'>
@@ -15,7 +17,9 @@ const Card = (props) => {
             </div>
             <div className='card__logo'>{props.cardInfo.cardlogo}</div>
           </div>
-          <div className='card__number'>{props.cardInfo.cardnumber}</div>
+          <div className={`card__number ${isBordered}`}>
+            {props.cardInfo.cardnumber}
+          </div>
           <div className='card__info'>
             <div className='card__holder'>
               <label>Card Holder</label>

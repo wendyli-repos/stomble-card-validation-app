@@ -16,6 +16,7 @@ class App extends Component {
         cvv: "",
       },
       isFlipped: false,
+      isBordered: false,
       errors: {},
     };
   }
@@ -23,6 +24,12 @@ class App extends Component {
   // card flip effect
   handleFocus = () => {
     this.setState((state) => ({ isFlipped: !state.isFlipped }));
+  };
+
+  // toggle borders on card based on input field
+  handleBorder = () => {
+    this.setState((state) => ({ isBordered: !state.isBordered }));
+    console.log("borderd");
   };
 
   // individual field validation
@@ -143,17 +150,18 @@ class App extends Component {
   };
 
   render() {
-    const { card, isFlipped, errors } = this.state;
+    const { card, isFlipped, errors, isBordered } = this.state;
     return (
       <React.Fragment>
         <div className='ui container'>
-          <Card cardInfo={card} isFlipped={isFlipped} />
+          <Card cardInfo={card} isFlipped={isFlipped} isBordered={isBordered} />
           <CardForm
             cardInfo={card}
             errors={errors}
             onCVVFocus={this.handleFocus}
             onFormSubmit={this.handleSubmit}
             onChange={this.handleChange}
+            onInputFocus={this.handleBorder}
           />
         </div>
       </React.Fragment>

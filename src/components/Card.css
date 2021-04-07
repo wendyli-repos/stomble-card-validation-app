@@ -26,6 +26,10 @@
   transform: rotateY(180deg);
 }
 
+.isBordered {
+  border: 1px dashed #fff;
+}
+
 .card--front {
   position: absolute;
   width: 100%;
@@ -50,7 +54,10 @@
   padding: 10px 20px;
   font-size: 1.5rem;
   letter-spacing: 5px;
-  /* border: 1px dashed #fff; */
+}
+
+.card__number.isBordered {
+  border: 1px solid #fff;
 }
 
 .card__chip,
@@ -63,6 +70,7 @@
 
 .card__holder--text {
   font-size: 1.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0;
 }
 
 .card__expiration--desc {

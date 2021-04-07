@@ -122,6 +122,8 @@ const CardForm = (props) => {
             placeholder={props.cardInfo.cardnumber}
             id='cardnumber'
             onChange={props.onChange}
+            onFocus={props.onInputFocus}
+            onBlur={props.onInputFocus}
           ></input>
           {props.errors.cardnumber && (
             <div className='ui negative message'>
@@ -178,9 +180,12 @@ const CardForm = (props) => {
               id='cvv'
               maxLength='3'
               placeholder={props.cardInfo.cvv}
-              onMouseOver={props.onCVVFocus}
-              onMouseOut={props.onCVVFocus}
+              // 7/4/21-Update02-using onFocus & onBlur to turn card
+              // onMouseOver={props.onCVVFocus}
+              // onMouseOut={props.onCVVFocus}
               onChange={props.onChange}
+              onFocus={props.onCVVFocus}
+              onBlur={props.onCVVFocus}
             ></input>
           </div>
         </div>
